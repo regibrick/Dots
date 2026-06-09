@@ -1,0 +1,22 @@
+include-file = ~/.config/polybar/modules.ini
+[bar/mybar]
+modules-left = i3
+modules-right = cpu ram battery rembat date
+tray-position = right
+font-0 = Noto Sans Mono:style=Regular
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+[colors]
+background = #230f06
+foreground = #97d07c
+primary = #fc9090
+secondary = #fc9090
+alert = #A54242
+disabled = #707880
+black = #000
+white = #fff
+grey = #aaa
+darkgrey = #555
+red = #f00
+green = #0f0
