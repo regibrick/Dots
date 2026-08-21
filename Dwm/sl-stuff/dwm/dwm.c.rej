@@ -1,0 +1,55 @@
+diff a/dwm.c b/dwm.c	(rejected hunks)
+@@ -708,9 +732,24 @@ drawbar(Monitor *m)
+ 
+ 	/* draw status first so it can be overdrawn by tags later */
+ 	if (m == selmon) { /* status is only drawn on selected monitor */
++		char *text, *s, ch;
+ 		drw_setscheme(drw, scheme[SchemeNorm]);
+-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
++
++		x = 0;
++		for (text = s = stext; *s; s++) {
++			if ((unsigned char)(*s) < ' ') {
++				ch = *s;
++				*s = '\0';
++				tw = TEXTW(text) - lrpad;
++				drw_text(drw, m->ww - statusw + x, 0, tw, bh, 0, text, 0);
++				x += tw;
++				*s = ch;
++				text = s + 1;
++			}
++		}
++		tw = TEXTW(text) - lrpad + 2;
++		drw_text(drw, m->ww - statusw + x, 0, tw, bh, 0, text, 0);
++		tw = statusw;
+ 	}
+ 
+ 	for (c = m->clients; c; c = c->next) {
+@@ -2004,8 +2081,25 @@ updatesizehints(Client *c)
+ void
+ updatestatus(void)
+ {
+-	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
++	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
+ 		strcpy(stext, "dwm-"VERSION);
++		statusw = TEXTW(stext) - lrpad + 2;
++	} else {
++		char *text, *s, ch;
++
++		statusw  = 0;
++		for (text = s = stext; *s; s++) {
++			if ((unsigned char)(*s) < ' ') {
++				ch = *s;
++				*s = '\0';
++				statusw += TEXTW(text) - lrpad;
++				*s = ch;
++				text = s + 1;
++			}
++		}
++		statusw += TEXTW(text) - lrpad + 2;
++
++	}
+ 	drawbar(selmon);
+ }
+ 
