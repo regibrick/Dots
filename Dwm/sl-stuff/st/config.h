@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka:pixelsize=15:antialias=true:autohint=true";
+static char *font = "spleen 8x16:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /* How to align the content in the window when the size of the terminal

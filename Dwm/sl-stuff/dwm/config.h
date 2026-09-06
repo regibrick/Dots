@@ -13,7 +13,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 4;        /* 2 is the default spacing around the bar's font */
 static const int refreshrate        = 240;       /* Update rate for drag and resize events, in updates (frames) per second */
 static const char *fonts[]          = { "Iosevka:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "spleen 6x12:size=12";
 static const char col_gray1[]       = "#e1e1d5";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#2e3440";
@@ -94,10 +94,11 @@ static const char *dmenucmd[] = { "dmenu_run_desktop", "-m", dmenumon, "-fn", dm
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *yazicmd[]  = { "st", "-e", "yazi", NULL };
+static const char *discordcmd[]  = { "st", "-e", "concord", NULL };
 static const char *voltoggle[]  = { "wpctl", "set-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *volup[]  = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%+", NULL };
 static const char *voldown[]  = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%-", NULL };
-static const char *browcmd[]  = { "zen", NULL };
+static const char *browcmd[]  = { "helium", NULL };
 static const char *snip[]  = { "bash", "-c", "/home/nkt/sl-stuff/snip.sh", NULL };
 
 static const Key keys[] = {
@@ -106,6 +107,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browcmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = yazicmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = discordcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = snip } },
 	{ MODKEY|ControlMask,           XK_1,      spawn,          {.v = voltoggle } },
 	{ MODKEY|ControlMask,           XK_2,      spawn,          {.v = voldown} },
