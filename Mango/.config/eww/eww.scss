@@ -1,0 +1,130 @@
+$bg:        #3B2E21;
+$bg-light:  #4F402E;
+$fg:        #F7DAC3;
+$focus:     #d4841e;
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: bold;
+}
+
+/* --- MAIN BAR --- */
+.bar-container {
+    background-color: $bg;
+    color: $fg;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.left-area, .center-area, .right-area {
+    padding: 2px 0px;
+}
+
+/* --- UTILITY BUTTON (Arch Logo) --- */
+.utility-btn {
+    color: $fg;
+    font-size: 22px;   
+    min-width: 40px;   
+    padding: 0px 0px;  
+    border-radius: 0px;
+}
+
+.utility-btn:hover {
+    color: $bg;
+    background-color: $fg; 
+}
+
+/* --- DASHBOARD (HUD) --- */
+.dash-window {
+    background-color: $bg;
+    border: 1px solid $focus;
+    padding: 20px;
+}
+
+.dash-sep {
+    background-color: $fg;
+    min-height: 1px;
+    margin: 15px 0px;
+}
+
+/* User Section */
+.user-icon { font-size: 42px; color: $fg; }
+.user-name { color: $fg; font-size: 16px; font-weight: 900; }
+.user-uptime { color: $fg; font-size: 12px; }
+
+/* Power Buttons */
+.pwr-btn {
+    background-color: $bg-light;
+    color: $fg;
+    font-size: 24px;
+    padding: 15px 0px;
+    border: 2px solid $focus;
+}
+.pwr-btn:hover {
+    background-color: $bg-light;
+    color: $fg;
+    border-color: $focus;
+}
+
+/* bar modules */
+.media-deck {
+    background-color: #332F2F;
+    border: 1px solid #444444;
+    padding: 2px 8px;
+    margin-right: 10px;
+}
+.media-title { color: #E0E0E0; font-size: 12px; margin-right: 8px; }
+.media-btn { color: #e0e0e0; font-size: 14px; padding: 0px 4px; }
+.media-btn:hover { color: #332F2F; background-color: #e0e0e0; }
+
+.title-box { color: #E0E0E0; font-size: 13px; }
+
+.vol-box { color: $fg; font-size: 13px; padding-right: 5px; }
+.vol-icon { color: $fg; font-size: 13px; margin-right: 10px; }
+
+.time-box { color: $fg; font-size: 13px; font-weight: 900; padding-right: 5px; }
+
+/* Tooltips */
+tooltip { background-color: $bg; border: 1px solid $focus; color: $fg; padding: 5px; font-family: "JetBrainsMono Nerd Font"; }
+
+.ws {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  color: $fg;
+}
+.free {
+  color: $fg;
+  transition: opacity 0.3s;
+}
+.free:hover {
+  opacity: 1;
+}
+
+/* --- NEW: SYSTEM TRAY --- */
+.tray-container {
+    padding-right: 5px;
+}
+
+.tray-items {
+    margin-right: 5px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+systray {
+    background-color: $bg;
+    border: 1px solid $focus;
+    padding: 2px 6px;
+}
+
+.tray-btn {
+    color: $fg;
+    font-size: 14px;
+    padding: 2px 6px;
+    min-width: 20px;
+}
+.tray-btn:hover {
+    color: $bg;
+    background-color: $fg;
+}
