@@ -1,0 +1,160 @@
+* {
+    all: unset;
+    font-family: "spleen 8x16";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+$bg: #a56e6e;
+$bg-light: #a56e6e;
+$fg: #211f1f;
+$focus: #630606;
+
+/* --- MAIN BAR --- */
+.bar-container {
+    background-color: $bg;
+    color: $fg;
+    border: 0px solid $focus;
+    padding: 0px 10px;
+}
+
+.left-area, .center-area, .right-area {
+    padding: 2px 0px;
+}
+
+/* --- UTILITY BUTTON (Arch Logo) --- */
+.utility-btn {
+    color: $fg;
+    font-size: 22px;   
+    min-width: 40px;   
+    padding: 0px 0px;  
+    border-radius: 0px;
+}
+
+.utility-btn:hover {
+    color: $bg;
+    background-color: $fg; 
+}
+
+/* --- DASHBOARD (HUD) --- */
+.dash-window {
+    background-color: $bg;
+    border: 1px solid $focus;
+    padding: 20px;
+}
+
+.dash-sep {
+    background-color: $fg;
+    min-height: 1px;
+    margin: 15px 0px;
+}
+
+/* User Section */
+.user-icon { font-size: 42px; color: $fg; }
+.user-name { color: $fg; font-size: 16px; font-weight: 900; }
+.user-uptime { color: $fg; font-size: 12px; }
+
+/* System Section */
+.sys-text { color: $fg; font-size: 12px; margin-bottom: 5px; }
+.sys-val { color: $fg; font-size: 12px; }
+
+/* Power Buttons */
+.pwr-btn {
+    background-color: $bg-light;
+    color: $fg;
+    font-size: 24px;
+    padding: 15px 0px;
+    border: 2px solid $focus;
+}
+.pwr-btn:hover {
+    background-color: $fg;
+    color: $bg-light;
+    border-color: $focus;
+}
+
+/* --- BAR MODULES --- */
+.vol-box { color: $fg; font-size: 13px; padding-right: 5px; }
+.vol-icon { color: $fg; font-size: 16px; margin-right: 10px; }
+
+.battery-box { color: $fg; font-size: 13px; padding-right: 5px; }
+.bat-icon { color: $fg; font-size: 16px; margin-right: 6px; }
+
+.time-box { color: $fg; font-size: 14px; font-weight: 900; padding-right: 5px; }
+tooltip { background-color: $bg; border: 1px solid $focus; color: $fg; padding: 5px; font-family: "spleen 8x16"; }
+
+/* --- NEW: SYSTEM TRAY --- */
+.tray-container {
+    padding-right: 5px;
+}
+
+.tray-items {
+    margin-right: 5px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+systray {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid #444444;
+    padding: 2px 6px;
+}
+
+.tray-btn {
+    color: #D03E35;
+    font-size: 14px;
+    padding: 2px 6px;
+    min-width: 20px;
+}
+.tray-btn:hover {
+    color: #000000;
+    background-color: #D03E35;
+}
+
+/* =========================================================================
+   GTK CONTEXT MENU STYLING (System Tray Popups)
+   ========================================================================= */
+
+/* The main menu box */
+menu {
+    background-color: rgba(10, 10, 10, 0.98); 
+    border: 1px solid #D03E35;                
+    margin: 0px;
+    font-family: "JetBrainsMono Nerd Font";  
+}
+
+/* Individual options (Quit, Settings, etc.) */
+menuitem {
+    padding: 6px 10px;
+    margin: 2px 5px;
+    color: #E0E0E0;
+    transition: all 0.1s;
+}
+
+/* Hover effect */
+menuitem:hover {
+    background-color: #D03E35;
+    color: #000000;
+}
+
+/* Text labels inside the menu */
+menuitem label {
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Separator lines */
+menu separator {
+    margin: 5px;
+    color: #444444; 
+}
+
+/* Checkboxes/Radio buttons inside the menu */
+menu check, menu radio {
+    color: #D03E35;
+    background-color: transparent;
+}
+
+menu check:checked, menu radio:checked {
+    color: #D03E35;
+}
